@@ -1,0 +1,82 @@
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.window {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    margin: 50px auto;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title-bar {
+    position: relative;
+    left: 0;right: 0;top: 0;
+    padding: 8px 10px;
+    background-color: rgb(32, 32, 32);
+    color: white;
+}
+
+.buttons {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 2px;
+}
+
+.title-bar-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#close {
+    background-color: red;
+}
+
+#minimize {
+    background-color: yellow;
+}
+
+#maximize {
+    background-color: greenyellow;
+}
+
+.main-body {
+    padding: 15px 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(26, 26, 26);
+}
+
+.prompt {
+    line-height: 1em;
+    vertical-align: top;
+}
+.prompt::after {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    margin-left: 3px;
+    background-color: black;
+    animation: blink 1s infinite;
+}
